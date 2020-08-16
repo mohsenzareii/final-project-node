@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
+const apiRoute = require('./routes/api');
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -14,7 +15,8 @@ mongoose.connect(
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
-  });
+});
+
 const app = express();
 
 // view engine setup
@@ -27,6 +29,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//route to api.js
+app.use('/api', apiRoute);
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
