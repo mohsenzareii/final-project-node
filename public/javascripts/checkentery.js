@@ -16,6 +16,20 @@ $(document).ready(function(){
                 } else {
                     $('#passwordHelp').html('');
                 }
+                break;
+            case 'firstName' :
+                if(value.length <8 || value.length > 30){
+                    $('#firstNameHelp').html('تعداد کاراکتر ها حداقل 8 و حداکثر 30 باشد!');
+                } else {
+                    $('#firstNameHelp').html('');
+                }  
+                break;
+            case 'lastName' :
+                if(value.length <8 || value.length > 30){
+                    $('#lastNameHelp').html('تعداد کاراکتر ها حداقل 8 و حداکثر 30 باشد!');
+                } else {
+                    $('#lastNameHelp').html('');
+                }      
         }
     });
 });

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/stylesheets/common.css">
+</head>
+<body>
+    <div class="col-6 offset-3 mt-5">
+        <div class="col-12 mt-5 text-center">
+            <h3>ثبت <span class="text-warning">کاربر</span></h3>
+        </div>
+        <div class="col-6 offset-3 mt-4">
+            <form action="/api/signup/newUser" method="POST">
+                <div class="form-group ">    
+                    <input type="text"  class="form-control text-light text-right bg-dark" placeholder="نام" id="firstName" name="firstName">
+                    <small id="firstNameHelp" class="form-text  text-right text-danger">الزامی*</small>
+                </div>
+                <div class="form-group ">    
+                    <input type="text" class="form-control text-light text-right bg-dark" placeholder="نام خانوادگی" id="lastName" name="lastName">
+                    <small id="lastNameHelp" class="form-text  text-right text-danger">الزامی*</small>
+                </div>
+                <div class="form-group ">    
+                    <input type="text" class="form-control text-light text-right bg-dark" placeholder="نام کاربری" id="userName" name="userName">
+                    <small id="userNameHelp" class="form-text  text-right text-danger">الزامی*</small>
+                </div>
+                <div class="form-group ">
+                    <input type="password" class="form-control text-light text-right bg-dark" placeholder="رمز عبور" id="password" name="password">
+                    <small id="passwordHelp" class="form-text  text-right text-danger">الزامی*</small>
+                </div>
+                <div class="form-group ">
+                    <input type="email" class="form-control text-light text-right bg-dark" placeholder="ایمیل آدرس" id="Email" name="Email">
+                </div>
+               
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="customRadio1" name="sex" value="male" name="sex" id="male" checked class="custom-control-input">
+                    <label class="custom-control-label" for="customRadio1">مذکر</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" id="customRadio2" name="sex" value="female" name="sex" id="female" class="custom-control-input">
+                    <label class="custom-control-label" for="customRadio2">مونث</label>
+                </div>
+               
+                <button type="submit" class="btn btn-warning col-12 mt-2 text-light">ثبت نام</button>
+
+            </form>
+            <form action="" >
+                <button type="submit" class="btn btn-warning col-12 mt-2 text-light">انصراف</button>
+            </form>
+        </div>
+        
+             
+
+        </div>
+    </div>
+</body>
+<%- include('../partials/scripts') %>
+</html>
