@@ -2,3 +2,7 @@ body{
     background: radial-gradient( white, rgb(192, 187, 187));
     height: 600px;   
  }
+
+ .mt-10{
+     margin-top: 96px;
+ }

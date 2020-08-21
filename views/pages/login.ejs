@@ -13,18 +13,18 @@
             <i class="fa fa-user fa-3x" aria-hidden="true"></i>
         </div>
         <div class="col-6 offset-3 mt-4">
-            <form>
+            <form action="/api/login/loginUser" method="POST">
                 <div class="form-group">
-                  <input type="text" class="form-control text-right bg-dark text-light" placeholder="نام کاربری" id="userName" aria-describedby="emailHelp">
-                  <small id="userNameHelp" class="form-text  text-right text-danger"></small>
+                  <input type="text" class="form-control text-right bg-dark text-light" placeholder="نام کاربری" id="userName" name="userName" aria-describedby="emailHelp">
+                  <small id="userNameHelp" class="form-text  text-right text-danger">*الزامی</small>
                 </div>
                 <div class="form-group">
-                  <input type="password" placeholder="رمزعبور" class="form-control text-right bg-dark text-light" id="password">
-                  <small id="passwordHelp" class="form-text  text-right text-danger"></small>
+                  <input type="password" placeholder="رمزعبور" class="form-control text-right bg-dark text-light" id="password" name="password">
+                  <small id="passwordHelp" class="form-text  text-right text-danger">*الزامی</small>
                 </div>
                 
                 <button type="submit" class="btn btn-warning col-12 text-light">ورود</button>
-              </form>
+            </form>
 
               <form action="/api/signup/"  method="GET">
                 <button type="submit" class="btn btn-warning col-12 mt-2 text-light">ثبت نام</button>
@@ -32,6 +32,11 @@
 
         </div>
     </div>
+    <% if(message) { %>
+      <div class="alert alert-danger text-center" role="alert">
+         <%= message %>
+      </div>
+  <% } %>
 
     <%- include('../partials/scripts') %>
 </body>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/stylesheets/dashboard.css">
+</head>
+<body>
+    <div class="row d-flex flex-row-reverse d-flex justify-content-between mx-0">
+        <nav class="nav  d-flex flex-row-reverse">
+            <a class="nav-link text-white  " href="#">خانه <i class="fa fa-home  ml-1" aria-hidden="true"></i> </a>
+            <a class="nav-link text-white " href="#">کاربران <i class="fa fa-user ml-1" aria-hidden="true"></i> </a>
+            <a class="nav-link text-white" href="#">مقالات</a>
+        </nav>
+        <nav class="nav  ">
+          <a class="nav-link text-warning" href="/api/user/logOut">خروج <i class="fa fa-sign-out ml-1" aria-hidden="true"></i> </a>
+        </nav>
+    </div>
+
+    <div class="col-6 offset-3 border rounded bg-white mt-10">
+        <div class="row  px-4 py-4">
+            <div class="col-7 py-2 border rounded shadow-sm">
+                <div class="firstName col-12  text-right">mohsen zarei<i class="fa fa-user-circle-o pl-2 text-primary" aria-hidden="true"></i></div>
+                <div class="mobile col-12 my-2 text-right">mohsen zarei<i class="fa fa-mobile pl-2 pr-1 text-secondary" aria-hidden="true"></i></div>
+                <div class="createdAt col-12 my-2 text-right">mohsen zarei<i class="fa fa-clock-o pl-2  text-info" aria-hidden="true"></i></div>
+                <div class="sex col-12 my-2 text-right">mohsen zarei<i class="fa fa-mars pl-2 pr-1 text-info" aria-hidden="true"></i></div>
+                <div class="sex col-12 my-2 text-right">mohsen zarei<i class="fa fa-venus pl-2 pr-1  text-pink" aria-hidden="true"></i></div>
+                
+                <div class="nav col-12  border-top  d-flex flex-row-reverse ">
+                    <a class="nav-link text-warning" href="/api/user/editProfile">ویرایش <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                </div>
+
+                
+            </div>
+            
+            <div class="col-5">
+                
+            </div>
+            <div class="row col-7 mt-4 mr-0  pr-0">
+                <div class="myArticles col-5 border rounded shadow-sm">
+                    <b>مقاله های من</b>
+                </div>
+                <div class="myArticles col-5 pr-0 offset-2 border rounded shadow-sm">
+                    <b>مقاله های من</b>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
