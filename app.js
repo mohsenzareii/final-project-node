@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
 const apiRoute = require('./routes/api');
-
+const session = require('express-session');
 
 //mongoose connect to mongoDB
 mongoose.connect(
@@ -16,6 +16,17 @@ mongoose.connect(
 });
 
 const app = express();
+
+//session initialize
+app.use(session({
+  key : 'user-sid',
+  secret : 'somerandonstuffs',
+  resave : false,
+  saveUninitialized : false,
+  cookie : {
+      expires : 60000000
+  }
+}));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

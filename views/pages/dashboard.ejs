@@ -18,14 +18,16 @@
 
     <div class="col-6 offset-3 border rounded bg-white mt-10">
         <div class="row  px-4 py-4">
-            <div class="col-7 py-2 border rounded shadow-sm">
-                <div class="firstName col-12  text-right">mohsen zarei<i class="fa fa-user-circle-o pl-2 text-primary" aria-hidden="true"></i></div>
-                <div class="mobile col-12 my-2 text-right">mohsen zarei<i class="fa fa-mobile pl-2 pr-1 text-secondary" aria-hidden="true"></i></div>
-                <div class="createdAt col-12 my-2 text-right">mohsen zarei<i class="fa fa-clock-o pl-2  text-info" aria-hidden="true"></i></div>
-                <div class="sex col-12 my-2 text-right">mohsen zarei<i class="fa fa-mars pl-2 pr-1 text-info" aria-hidden="true"></i></div>
-                <div class="sex col-12 my-2 text-right">mohsen zarei<i class="fa fa-venus pl-2 pr-1  text-pink" aria-hidden="true"></i></div>
-                
-                <div class="nav col-12  border-top  d-flex flex-row-reverse ">
+            <div class="col-7 py-2 pr-0 border rounded shadow-sm">
+                <div class="firstName col-12  text-right"><%= user.firstName %> <%= user.lastName %><i class="fa fa-user-circle-o pl-2 text-primary" aria-hidden="true"></i></div>
+                <div class="mobile col-12 my-2 text-right"><%= user.mobile %><i class="fa fa-mobile pl-2 pr-1 text-secondary" aria-hidden="true"></i></div>
+                <div class="createdAt col-12 my-2 text-right"><%= user.createdAt %><i class="fa fa-clock-o pl-2  text-info" aria-hidden="true"></i></div>
+                <% if(user.sex=== 'male') { %>
+                    <div class="sex col-12 my-2 text-right"><%= user.sex %><i class="fa fa-mars pl-2 pr-1 text-info" aria-hidden="true"></i></div>
+                <% } else { %>
+                    <div class="sex col-12 my-2 text-right">mohsen zarei<i class="fa fa-venus pl-2 pr-1  text-pink" aria-hidden="true"></i></div>
+                <% } %>
+                <div class="nav col-12  border-top pr-0  d-flex flex-row-reverse ">
                     <a class="nav-link text-warning" href="/api/user/editProfile">ویرایش <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                 </div>
 
@@ -33,15 +35,30 @@
             </div>
             
             <div class="col-5">
-                
+
             </div>
-            <div class="row col-7 mt-4 mr-0  pr-0">
-                <div class="myArticles col-5 border rounded shadow-sm">
-                    <b>مقاله های من</b>
+            <div class=" col-7 mt-4 ">
+                <div class="row">
+                    <div class="myArticles col-5 py-2 text-center border rounded shadow-sm">
+                        <b>مقاله های من</b>
+                        <div class="col-12 mt-1">
+                            <b>12</b>
+                        </div>
+                        <form class="text-center mt-2" action="" method="GET">
+                            <input class=" btn btn-warning text-white col-12" type="submit" value="مشاهده">
+                        </form>
+                    </div>
+                    <div class="myArticles col-5 py-2 text-center  offset-2 border rounded shadow-sm">
+                        <b>پیام های من</b>
+                        <div class="col-12 mt-1">
+                            <b>12</b>
+                        </div>
+                        <form class="text-center mt-2" action="" method="GET">
+                            <input class=" btn btn-warning text-white col-12" type="submit" value="مشاهده">
+                        </form>
+                    </div>
                 </div>
-                <div class="myArticles col-5 pr-0 offset-2 border rounded shadow-sm">
-                    <b>مقاله های من</b>
-                </div>
+               
             </div>
         </div>
     </div>

@@ -17,7 +17,7 @@ router.post('/loginUser', async (req, res) => {
         if(!bloger){
             throw new Error('نام کاربری یا رمز عبور اشتباه است!');
         }
-
+        req.session.user = bloger;
         res.redirect(303, '/api/users/dashboard');
 
     } catch (error) {
