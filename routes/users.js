@@ -30,7 +30,7 @@ router.put('/editProfile', async(req, res) =>{
     res.send({redirect : '/api/users/dashboard'});
 
  } catch (error) {
-   
+   res.render('pages/editProfile', {user : req.session.user, message : error.message});
  }
 });
 
