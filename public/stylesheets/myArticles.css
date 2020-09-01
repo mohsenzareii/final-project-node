@@ -1,0 +1,20 @@
+body{
+    background-image:linear-gradient(lightgray , lightgray);
+}
+
+.button-custom :focus{
+    border: none;
+    outline: none;
+}
+
+.button-custom :active{
+    border: none;
+    outline: none;
+}
+
+.button-custom :visited{
+    border: none;
+    outline: none;
+}
+
+
