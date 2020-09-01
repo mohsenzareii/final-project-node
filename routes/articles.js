@@ -6,4 +6,8 @@ router.get('/myArticles', (req, res) =>{
     res.render('pages/myArticles', {user : req.session.user});
 });
 
+router.get('/newArticle', (req,res) =>{
+    res.render('pages/newArticle');
+});
+
 module.exports = router;
