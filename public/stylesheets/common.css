@@ -3,6 +3,10 @@ body{
     height: 600px;   
  }
 
+ .liner-gradient{
+     background: linear-gradient(to right, gray,lightgrey);
+ }
+
  .mt-10{
      margin-top: 96px;
  }

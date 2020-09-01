@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <%- include('../partials/head') %>
+</head>
+<body class="liner-gradient">
+    <div class="col-4 offset-4  mt-10 rounded px-3 py-3 ">
+        <form class="uploadArticle" action="/api/articles/uploadArticle" method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <div class="custom-file mt-2">
+                    <input type="file" class="custom-file-input" name="article" id="article" accept=".pdf" lang="pl-Pl">
+                    <label class="custom-file-label"  for="article">choose file ..</label>
+                  </div>
+             </div>
+
+            <div class="form-group text-right">
+              <input type="text" class="form-control text-right" name="title" id="title" placeholder="عنوان مقاله">
+            </div>
+ 
+            <div class="form-group text-right">
+              <textarea class="form-control text-right" id="abstract" placeholder="خلاصه مقاله" name="abstract" maxlength="200" rows="5"></textarea>
+            </div>
+ 
+            <div class="form-group row px-3">
+                <button type="submit" id="accept"  class="btn btn-warning text-white mt-3 col-12 ">تایید</button>
+                <!-- <button type="button" id="exit" class="btn btn-primary mt-3 col-2 offset-8">انصراف</button>     -->
+            </div>  
+        </form>
+
+    </div>
+</body>
+<%- include('../partials/scripts') %>
+<script src="/javascripts/newArticle.js"></script>
+</html>
