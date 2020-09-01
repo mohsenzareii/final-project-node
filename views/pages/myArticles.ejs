@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/stylesheets/myArticles.css">
+</head>
+<body>
+    <div class="row col-12 mx-0 px-0">
+        <div class="col-10 border" style="min-height: 657px;">
+            
+        </div>
+       
+        <div class="col-2 bg-white ">
+            <div class="col-12 mt-3 px-0 ">
+                <img src="/images/index.png" class="col-12 border border-warning rounded-circle" alt="">
+            </div>
+            <div class="col-12 text-center">
+                <h3><%= user.userName %></h3>
+            </div>
+            <div class="menu  col-12 mt-3 px-0 mx-0">
+                <div class="profile row py-2">
+                    <form class="col-10 px-0 py-0 button-custom" action="/api/users/dashboard" method="GET">
+                        <input class="col-12  pointer border-0 bg-white " type="submit" value="پروفایل ">
+                    </form>
+                    <i class="text-primary  px-0 py-0 col-2 fa fa-user-circle-o mt-2" aria-hidden="true"></i>
+                </div>
+
+                <div class="other_articles row py-2">
+                    <form class="col-10 px-0 py-0 button-custom" action="/api/user/dashboard" method="GET">
+                        <input class="col-12  pointer border-0 bg-white" type="submit" value="مقاله دیگران">
+                    </form>
+                    <i class="text-info  col-2  fa fa-newspaper-o mt-2 px-0" aria-hidden="true"></i>
+                </div>
+                
+                <div class="new_articles row py-2">
+                    <form class="col-10 px-0 py-0 button-custom" action="/api/user/dashboard" method="GET">
+                        <input class="col-12  pointer border-0 bg-white" type="submit" value="مقاله جدید +">
+                    </form>
+                    <i class="text-success  col-2  fa fa-newspaper-o mt-2 px-0" aria-hidden="true"></i>
+                </div>
+
+                <div class="exit row py-2">
+                    <form class="col-10 px-0 py-0 button-custom" action="/api/user/dashboard" method="GET">
+                        <input class="col-12  pointer border-0 bg-white" type="submit" value="خروج">
+                    </form>
+                    <i class="text-danger  col-2   fa fa-sign-out mt-2 px-0" aria-hidden="true"></i>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
