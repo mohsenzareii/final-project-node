@@ -16,8 +16,15 @@ const storage = multer.diskStorage({
 const uploadArticle = multer({storage : storage});
 
 //send myArticles page to client
-router.get('/myArticles', (req, res) =>{
-    res.render('pages/myArticles', {user : req.session.user});
+router.get('/myArticles', async(req, res) =>{
+    try {
+        let articles =await Article.find({author : req.session.user._id});
+   
+        res.render('pages/myArticles', {user : req.session.user, articles : articles});
+    } catch (error) {
+        
+    }
+    
 });
 
 router.get('/newArticle', (req,res) =>{

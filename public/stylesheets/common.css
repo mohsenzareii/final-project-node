@@ -10,3 +10,13 @@ body{
  .mt-10{
      margin-top: 96px;
  }
+
+ p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pointer{
+    cursor: pointer;
+}
