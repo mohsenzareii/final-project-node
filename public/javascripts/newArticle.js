@@ -3,7 +3,6 @@ $(document).ready(function () {
     $('#article').change(function() {
         let filename = $('#article').val();
         validateFileType(filename);
-
     });
 });
 
@@ -16,4 +15,4 @@ function validateFileType(fileName){
     }else{
         alert("فابل با پسوند pdf پذیرفته می شود!");
     }   
-    }
+}
