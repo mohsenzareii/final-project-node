@@ -19,10 +19,9 @@ const uploadArticle = multer({storage : storage});
 router.get('/myArticles', async(req, res) =>{
     try {
         let articles =await Article.find({author : req.session.user._id});
-   
         res.render('pages/myArticles', {user : req.session.user, articles : articles});
     } catch (error) {
-        
+        console.log(error);
     }
     
 });
@@ -53,6 +52,16 @@ router.post('/uploadArticle', (req, res) =>{
        });
 
     });
+});
+
+//delete an article 
+router.delete('/delete/:articleId', async(req, res) =>{
+    try {
+        await Article.findByIdAndDelete({_id : req.params.articleId});
+        res.send({redirect : '/api/articles/myArticles'});
+    } catch (error) {
+        
+    }
 });
 
 module.exports = router;
