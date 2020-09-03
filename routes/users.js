@@ -34,4 +34,13 @@ router.put('/editProfile', async(req, res) =>{
  }
 });
 
+//delete session and send login page to client
+router.get('/logOut', (req, res) =>{
+  if(req.session){
+    req.session.destroy((err) =>{
+        if(!err) return res.redirect('/api/login/');
+    });
+  }
+});
+
 module.exports = router;
