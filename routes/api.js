@@ -4,6 +4,7 @@ const loginRoute = require('../routes/login');
 const signupRoute = require('../routes/signup');
 const userRoute = require('../routes/users');
 const articleRoute = require('../routes/articles');
+const commentRoute = require('../routes/comments');
 
 //check session for login 
 const isLogin = function (req, res, next){
@@ -28,5 +29,8 @@ router.use('/users', checkSession, userRoute);
 
 //route to articles
 router.use('/articles', checkSession, articleRoute);
+
+//route to commenys
+router.use('/comments', checkSession, commentRoute);
 
 module.exports = router;

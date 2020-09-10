@@ -1,11 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
+const Article = require('../models/article');
 
 
 /* GET users listing. */
-router.get('/dashboard', (req, res) => {
-  res.render('pages/dashboard', {user : req.session.user});
+router.get('/dashboard', async(req, res) => {
+  try {
+    let articles = await Article.find({author : req.session.user._id});
+    res.render('pages/dashboard', {user : req.session.user, articles : articles});
+  } catch (error) {
+    
+  }
+  
 });
 
 //send edit page to client
