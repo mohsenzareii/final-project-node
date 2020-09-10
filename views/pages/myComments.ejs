@@ -1,32 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('../partials/head') %>
-    <link rel="stylesheet" href="/stylesheets/myArticles.css">
+   <%- include('../partials/head') %>
 </head>
-<body>
+<body class="liner-gradient">
     <div class="row col-12 mx-0 px-0">
         <div class="col-10 " style="min-height: 657px;">
-            <% if(articles) { %>
-                <% for(let i=0; i< articles.length; i++) { %>
-                    <div class="row px-2 mt-2">
-                        <div class="col-10 bg-white ">
-                           <h4 class="text-center"><%= articles[i].title %></h4>
-                           <div class="col-10 offset-1 mt-3">
-                               <p style="height: 60px;"><%= articles[i].abstract %></p>
-                           </div>
-                           <hr>
-                           <div class="col-12 my-2 text-center">
-                                 <i id="<%= articles[i]._id %>" onclick="Delete(this)"  class="fa fa-trash text-danger pointer mx-1" aria-hidden="true"></i>
-                                 <a href="/api/comments/<%= articles[i]._id %>"><i id="<%= articles[i]._id %>"  class="fa fa-comment text-info pointer mx-1" aria-hidden="true"></i></a>
-                            </div>
-                        </div>
-                        <div class="col-2 px-0">
-                            <img src="/images/default-article.png" class="col-10 px-0" alt="">
-                        </div>
-                    </div>
-                <% } %>
-            <% } %>        
+            <div class="row mx-0">
+                <div class="col-8 bg-white pr-0">
+                    <h4 class="text-center mt-2"><%= article.title %></h4>
+                    <p class="col-10"><%= article.abstract %></p>
+                </div>
+                <div class="col-4 px-0">
+                    <img src="/images/default-article.png" class="col-12 px-0" alt="">
+                </div>
+            </div>        
         </div>
        
         <div class="col-2 bg-white ">
@@ -69,7 +57,4 @@
         </div>
     </div>
 </body>
-<%- include('../partials/scripts') %>
-<script src="/javascripts/deleteArticle.js"></script>
-<script src="/javascripts/articleComments.js"></script>
 </html>
