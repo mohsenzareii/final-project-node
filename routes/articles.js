@@ -26,10 +26,12 @@ router.get('/myArticles', async(req, res) =>{
     
 });
 
+//send newArticle page to client
 router.get('/newArticle', (req,res) =>{
     res.render('pages/newArticle');
 });
 
+//upload article and redirect to myArticles
 router.post('/uploadArticle', (req, res) =>{
     const upload = uploadArticle.single('article');
 
@@ -61,6 +63,20 @@ router.delete('/delete/:articleId', async(req, res) =>{
         res.send({redirect : '/api/articles/myArticles'});
     } catch (error) {
         
+    }
+});
+
+router.get('/allarticles', async(req, res) =>{
+    try {
+        let articles = await Article.find({"author" : {$ne : req.session.user._id}});
+        console.log(articles);
+        if(articles.length === 0){
+            console.log(111);
+            throw new Error ("مقاله ای وجود ندارد!");
+        }
+        res.render('pages/allArticles', {articles : articles, user : req.session.user , message : null});
+    } catch (error) {
+        res.render('pages/allArticles', {articles : null, user : req.session.user, message : error.message});
     }
 });
 

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <%- include('../partials/head') %>
+</head>
+<body>
+    <body class="liner-gradient">
+        <div class="row col-12 mx-0 px-0">
+            <div class="col-10 " style="min-height: 657px;">
+               <% if(message) { %>
+                    <div class="alert alert-danger col-12 text-center mt-4" role="alert">
+                        <%= message %>
+                    </div>
+               <% } else { %>
+                    <% for(let i=0; i< articles.length; i++) { %>
+                        <div class="row px-2 mt-2">
+                            <div class="col-10 bg-white ">
+                                <h4 class="text-center"><%= articles[i].title %></h4>
+                                <div class="col-10 offset-1 mt-3">
+                                    <p style="height: 60px;"><%= articles[i].abstract %></p>
+                                </div>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-6 text-left">
+                                         <a href="/api/comments/<%= articles[i]._id %>"><i id="<%= articles[i]._id %>"  class="fa fa-comment text-info pointer mx-1" aria-hidden="true"></i></a>
+                                    </div>
+                                    <div class="col-6 text-right">
+                                            <a class="nav-link py-0" href="/api/articles/myArticle/<%= articles[i]._id %>" ><i class="text-warning">...ادامه مطلب</i></a>
+                                    </div>
+                                </div>
+                            </div>    
+                           
+                            <div class="col-2 px-0">
+                                <img src="/images/default-article.png" class="col-10 px-0" alt="">
+                            </div>
+
+                        </div>
+                    <% } %>
+                <% } %>  
+            </div>
+            <div class="col-2 bg-white ">
+                <div class="col-12 mt-3 px-0 ">
+                    <img src="/images/index.png" class="col-12 border border-warning rounded-circle" alt="">
+                </div>
+                <div class="col-12 text-center">
+                    <h3><%= user.userName %></h3>
+                </div>
+                <div class="menu  col-12 mt-3 px-0 mx-0">
+                    <div class="profile row py-2">
+                        <form class="col-10 px-0 py-0 button-custom" action="/api/users/dashboard" method="GET">
+                            <input class="col-12  pointer border-0 bg-white " type="submit" value="پروفایل ">
+                        </form>
+                        <i class="text-primary  px-0 py-0 col-2 fa fa-user-circle-o mt-2" aria-hidden="true"></i>
+                    </div>
+    
+                    <div class="other_articles row py-2">
+                        <form class="col-10 px-0 py-0 button-custom" action="/api/user/dashboard" method="GET">
+                            <input class="col-12  pointer border-0 bg-white" type="submit" value="مقاله دیگران">
+                        </form>
+                        <i class="text-info  col-2  fa fa-newspaper-o mt-2 px-0" aria-hidden="true"></i>
+                    </div>
+                    
+                    <div class="new_articles row py-2">
+                        <form class="col-10 px-0 py-0 button-custom" action="/api/articles/newArticle" method="GET">
+                            <input class="col-12  pointer border-0 bg-white" type="submit" value="مقاله جدید +">
+                        </form>
+                        <i class="text-success  col-2  fa fa-newspaper-o mt-2 px-0" aria-hidden="true"></i>
+                    </div>
+    
+                    <div class="exit row py-2">
+                        <form class="col-10 px-0 py-0 button-custom" action="/api/users/logOut" method="GET">
+                            <input class="col-12  pointer border-0 bg-white" type="submit" value="خروج">
+                        </form>
+                        <i class="text-danger  col-2   fa fa-sign-out mt-2 px-0" aria-hidden="true"></i>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+           
+           
+</body>
+</html>

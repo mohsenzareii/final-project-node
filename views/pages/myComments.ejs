@@ -16,8 +16,11 @@
                 </div>
             </div>
             
-            <div class="col-12">
-                
+            <div class="col-12 bg-white mt-2 rounded py-1">
+                <form action="/api/comments/recordComments" method="POST">  
+                    <textarea class="form-control text-right" id="exampleFormControlTextarea1" placeholder="پیام جدید" rows="3"></textarea>
+                    <input class=" btn btn-warning text-white col-1 offset-11 mt-1" type="submit" value="ارسال">
+                </form>
             </div>
         </div>
        

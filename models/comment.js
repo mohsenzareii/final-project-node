@@ -15,6 +15,10 @@ const commentSchema = new Schema({
         type : Schema.Types.ObjectId,
         required : true,
         ref : "Article"
+    },
+    accepted : {
+        type : Boolean,
+        required : true 
     }
 });
 

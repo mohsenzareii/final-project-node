@@ -17,8 +17,16 @@
                            </div>
                            <hr>
                            <div class="col-12 my-2 text-center">
-                                 <i id="<%= articles[i]._id %>" onclick="Delete(this)"  class="fa fa-trash text-danger pointer mx-1" aria-hidden="true"></i>
-                                 <a href="/api/comments/<%= articles[i]._id %>"><i id="<%= articles[i]._id %>"  class="fa fa-comment text-info pointer mx-1" aria-hidden="true"></i></a>
+                               <div class="row">
+                                   <div class="col-6 text-left">
+                                        <i id="<%= articles[i]._id %>" onclick="Delete(this)"  class="fa fa-trash text-danger pointer mx-1" aria-hidden="true"></i>
+                                        <a href="/api/comments/<%= articles[i]._id %>"><i id="<%= articles[i]._id %>"  class="fa fa-comment text-info pointer mx-1" aria-hidden="true"></i></a>
+                                   </div>
+                                   <div class="col-6 text-right">
+                                           <a class="nav-link py-0" href="/api/articles/myArticle/<%= articles[i]._id %>" ><i class="text-warning">...ادامه مطلب</i></a>
+                                   </div>
+                               </div>
+                               
                             </div>
                         </div>
                         <div class="col-2 px-0">
